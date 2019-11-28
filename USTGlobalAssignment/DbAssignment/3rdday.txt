@@ -1,0 +1,149 @@
+waqtd all record of employee excluding tester
+mysql> select * from
+    -> emp
+    -> where designation != 'Tester';
+
+mysql> select * from emp
+    -> where designation <> 'Tester';
+
+
+//waqtd name of all employee who is working as a hr or tester and sal is greater than 25000
+mysql> select * from emp
+    -> where designation is('Tester','hr') and salary > 25000;
+
+
+//waqtd all emp exluding s/w developer deptno =40;
+mysql> select * from emp
+    -> where designation = 'software developer' and deptno = 40;
+
+//waqtd s/w dev who are working for deptno 10,40
+select * from emp
+where designation in ('software developer') and deptno in( 10,40);
+
+//waqtd all the detail of emp 10,20,50
+ 	select * from emp
+    -> where deptno in (10,30,50);
+
+
+//wqtd names who is working as a tester hr admin
+select * from emp
+where designation in ('Tester','hr','admin');
+
+
+//waqtd the detail of tester admin s/w dev who are working in deptno 20 or 30 and sal > 40000
+mysql> select * from emp
+    -> where designation in ('Tester','admin','software developer') and deptno in (20,30) and salary > 30000;
+
+mysql> insert into emp(eid,name,mobile,dob,age,doj,bloodgroup,deptno,salary,email,gender,designation)
+    -> values(7,'sridhar',8989855015,'1997-07-01',23,'2019-06-10','o+',20,30000,'sridhar@gmail.com','male','adm
+Query OK, 1 row affected (0.08 sec)
+
+//waqtd all record of emp excluding who is working as tester,admin,hr
+select * from emp
+where designation not in ('Tester','admin','hr');
+
+
+//waqtd all the record of empolyee whose age is 20,25,30,40 exclude all detail of tester and s/w developer
+select * from emp
+where age in (20,25,30,40) and designation not in('Tester','software developer');
+
+
+//waqtd all details of employee whose age is between 20 to 40;
+mysql> select * from emp
+    -> where age between 20 and 40;
+
+//waqtd all detail of empolyee who were hire during 2017
+
+mysql> select * from emp
+    -> where doj between '2017-01-01' and '2017-12-31';
+
+
+mysql> select * from emp
+    -> where doj like '2017%';
+
+//waqtd al record of emp excluding whose salary is in rangr of 25k to 30k
+> select * from emp
+> where salary not between 25000 and 30000;
+
+
+
+//waqtd all the employee record whose name start with a
+
+> select * from emp
+> where name like 'b%';
+
+//waqtd all the employee record whose second character is i
+select * from emp
+where name like '_i%';
+
+//waqtd the name of the employee which has atleast two 'll' in their name
+ select * from emp
+ where name like 'l%l%';
+
+//waqtd the name of employee starts with s and end with r
+select name from emp
+where name like 's%r';
+
+//waqtd all the record of emp the begins with s or h;
+select name from emp
+where name like 's%' or 'h%';
+
+//waqtd all details in emp who is working in dept 10,20,30 and job designation starts with s
+select * from emp
+where deptno in(10,20,30) and designation like 's%';
+
+============================================Aggregate/MultiRow Function=======================================================
+mysql>
+mysql> select sum(salary) from emp;
++-------------+
+| sum(salary) |
++-------------+
+|      197500 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from emp;
++-------------+
+| avg(salary) |
++-------------+
+|  28214.2857 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) from emp;
++-------------+
+| max(salary) |
++-------------+
+|       50000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select min(doj) from emp;
++------------+
+| min(doj)   |
++------------+
+| 2017-03-20 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select max(name) from emp;
++-----------+
+| max(name) |
++-----------+
+| swathi    |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select count(salary) from emp;
++---------------+
+| count(salary) |
++---------------+
+|             7 |
++---------------+
+1 row in set (0.00 sec)
+
+==============================================================================================================================
+
+//waqtd to display all employee salary should be in descending order
+ select * from emp
+ order by salary desc;

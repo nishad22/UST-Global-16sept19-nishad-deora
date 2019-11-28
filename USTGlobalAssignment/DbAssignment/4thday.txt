@@ -1,0 +1,42 @@
+==============================singlerow query=============================
+
+//waqtd all the record of emp is same as name priti
+ select * from emp
+ where doj = (select doj from emp
+ where name = 'priti');
+
+// waqtd the second maximum sal
+select max(salary) from emp
+where salary < (select max(salary) from emp);
+
+
+==============================multirow query=============================
+//waqtd name of employee who is working in location which has atleast one a in th location;
+ select * from emp
+ where deptno in (select deptno from dept
+ where loc like '%a%');
+
+//waqtd all record os emp who is working in admin,operator and devlopment
+select * from emp
+where deptno in (select deptno from dept
+where dname in ('admin','operator','development'));
+
+==================================group by================================
+//waqtd emp record max salary to each dept
+select max(salary) from emp
+group by deptno;
+
+//waqtd highest salary given to hr for each deptno
+select max(salary) from emp
+where designation = 'hr'
+group by deptno;
+
+select * from emp
+where designation = 'hr'
+group by deptno
+having max(salary);
+
+//waqtd  deptno  which has atleast 2 employee
+select deptno from emp
+group by deptno
+having count(deptno) >= 2;

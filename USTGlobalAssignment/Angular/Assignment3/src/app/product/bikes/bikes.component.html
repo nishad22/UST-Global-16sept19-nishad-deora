@@ -1,0 +1,7 @@
+<div class="col-md-4 float-left card card-body">
+    <div class = "card card body" *ngFor = "let bikes of Bikes">
+        <img src="{{bikes.imgUrl}}" alt="" (click) = "SendBike(Bike)">
+        <h1>{{bikes.name}}</h1>
+        <p>{{bikes.desc}}</p>
+    </div>
+</div>

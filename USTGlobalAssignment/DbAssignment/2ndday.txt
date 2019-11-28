@@ -1,0 +1,185 @@
+mysql> show databases;
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| dummydb            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.48 sec)
+
+mysql> use dummydb;
+Database changed
+
+mysql> show tables;
+Empty set (0.05 sec)
+
+mysql> create table product(pid int,pname varchar(120),quantity int);
+Query OK, 0 rows affected (1.16 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_dummydb |
++-------------------+
+| product           |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> drop table product;
+Query OK, 0 rows affected (0.31 sec)
+
+mysql> drop database dummydb;
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> create database UST_GLOBAL;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| ust_global         |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use ust_global;
+Database changed
+mysql> create table product(pid int,pname varchar(120),quantity int);
+Query OK, 0 rows affected (0.38 sec)
+
+mysql> desc product
+    -> ;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| pid      | int(11)      | YES  |     | NULL    |       |
+| pname    | varchar(120) | YES  |     | NULL    |       |
+| quantity | int(11)      | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+3 rows in set (0.05 sec)
+
+mysql> alter table product add column pprice int;
+Query OK, 0 rows affected (0.88 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc product;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| pid      | int(11)      | YES  |     | NULL    |       |
+| pname    | varchar(120) | YES  |     | NULL    |       |
+| quantity | int(11)      | YES  |     | NULL    |       |
+| pprice   | int(11)      | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+mysql> insert into samsung(proid,pname,quantity,pprice)
+    -> values(1,'m30s',1,17000);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into samsung(proid,pname,quantity,pprice)
+    -> values(2,'j8',1,15000);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into samsung(proid,pname,quantity,pprice)
+    -> values(3,'not10',2,58000);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from samsung;
++-------+-------+----------+--------+
+| proid | pname | quantity | pprice |
++-------+-------+----------+--------+
+|     1 | m30s  |        1 |  17000 |
+|     2 | j8    |        1 |  15000 |
+|     3 | not10 |        2 |  58000 |
++-------+-------+----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> insert into samsung values(4,'s9plus',3,30000);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into samsung(proid,pname) values(5,'m20');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> update emp set designation = 'software developer'
+    -> where eid = 1;
+
+ delete from emp
+ where eid = 5
+
+//where clause with insert give error
+ mysql> insert into emp (mobile) values(8208139728)
+    -> where eid =1 ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where eid =1' at line 2
+mysql> select salary+5000 sal
+    -> from emp;
+
+ //waqtd increament and decreament by 5000,annual sal
+ mysql> select salary+5000 sal
+    -> from emp;
++-------+
+| sal   |
++-------+
+| 27000 |
+| 27500 |
+| 55000 |
+| 35000 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select salary-5000 sal from emp;
++-------+
+| sal   |
++-------+
+| 17000 |
+| 17500 |
+| 45000 |
+| 25000 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select salary*12 salAn from emp;
++--------+
+| salAn  |
++--------+
+| 264000 |
+| 270000 |
+| 600000 |
+| 360000 |
++--------+
+4 rows in set (0.00 sec)
+
+//waqtd the result from emp table whose designation is s/w developer
+ select *
+ from emp
+ where designation = 'software developer';
+
+
+ //waqtd all record of emp excluding who is working in dept=20;
+ select * from emp
+where deptno != 20;
+
+
+//waqtd the record of empolyee whose sal >25000
+select * from emp
+where salary > 25000;
+
+//waqtd the record of emp  whose age <30
+select * from emp
+where age < 30;
+
+//waqtd name,sal,emailid,mobno where age >= 21
+ select eid,salary,email,mobile
+ from emp
+ where age >= 21;
+
+//
+

@@ -1,0 +1,14 @@
+form{
+    border: 1px solid burlywood;
+    width:  368px;
+    height: 289px;
+    margin: 177px 0 0 559px;
+    text-align: center;
+    font-size: 17px;
+    font-family: cursive;
+    border-radius: 25px;
+    /* background-image: url(../image/0784?2_HD.jpg); */
+    /* background-size: cover; */
+    background-repeat: no-repeat; 
+    color: burlywood;
+}

@@ -1,0 +1,8 @@
+<h1>Welcome to {{title}}</h1>
+<br>
+<input type="text" #myInput>
+<button class="btn btn-outline-success" (click) = "btnData(myInput)">Go</button>
+<h1 style="color: gold">{{message}}</h1>
+
+<!-- <app-aboutchild ></app-aboutchild> -->
+<app-aboutchild [aboutClick] = "btn" (childEvent) = "message=$event" [aboutData] = "name" ></app-aboutchild>

@@ -1,0 +1,54 @@
+<p>candidatedetail works!</p>
+<div class = "container col-md-4 offset-4 card card-body ">
+  <form  action="" class="text-center border border-light p-5" #form="ngForm" (ngSubmit) = "candidateData(form)">
+    <h1 class="text-center bg-dark text-white">Candidate Detail</h1>
+    
+    <div class="form-group ">
+        <input type="text"  name='cname' id='cname' class = 'form-control' placeholder="Candidate Name" #cname = 'ngModel' ngModel required>
+        <div *ngIf = 'cname.touched && cname.invalid'>  
+          <p *ngIf = 'cname.errors.required' class = "alert alert-danger">* this field is required</p>
+            <!-- <p *ngIf = 'email.errors.minlength' class = 'text-danger'>* email is too short</p> -->
+        </div>
+    </div>
+    
+    <div class="form-group ">
+      <input type="text"  name='yoe' id='yoe' class = "form-control" placeholder="Year of Experience" #yoe = 'ngModel' ngModel required>
+      <div *ngIf = 'yoe.touched && yoe.invalid'>
+          <p *ngIf = 'yoe.errors.required' class = "alert alert-danger">* this field is required</p>
+          <!-- <p *ngIf = 'password.errors.minlength' class = 'text-danger'>* email is too short</p> -->
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <input type="text"  name='skills' id='skills' class = "form-control"  #skills = 'ngModel' ngModel required>
+      <div *ngIf = 'skills.touched && skills.invalid'>
+          <p *ngIf = 'skills.errors.required' class = "alert alert-danger">* this field is required</p>
+            <!-- <p *ngIf = 'password.errors.minlength' class = 'text-danger'>* email is too short</p> -->
+      </div>
+    </div>
+    
+  
+  
+  <div class="form-group ">
+    <input type="text"  name='ctc' id='ctc' class = "form-control" placeholder="CTC" #ctc = 'ngModel' ngModel required>
+    <div *ngIf = 'ctc.touched && ctc.invalid'>
+        <p *ngIf = 'ctc.errors.required' class = "alert alert-danger">* this field is required</p>
+        <!-- <p *ngIf = 'password.errors.minlength' class = 'text-danger'>* email is too short</p> -->
+    </div>
+  </div>
+  
+  <div class="form-group ">
+    <input type="text"  name='ectc' id='ectc' class = "form-control" placeholder="ECTC" #ectc = 'ngModel' ngModel required>
+    <div *ngIf = 'ectc.touched && ectc.invalid'>
+        <p *ngIf = 'ectc.errors.required' class = "alert alert-danger">* this field is required</p>
+        <!-- <p *ngIf = 'password.errors.minlength' class = 'text-danger'>* email is too short</p> -->
+    </div>
+  </div>
+
+
+    <div class = "form-group">
+        <button type = 'submit' class = 'btn btn-outline-success float-right' [disabled] = 'form.invalid'>submit</button>
+    </div>
+    
+</form>
+</div>

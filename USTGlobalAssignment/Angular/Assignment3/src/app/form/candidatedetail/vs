@@ -1,0 +1,40 @@
+<div class = "container col-md-4 offset-4 card card-body ">
+    <form class="text-center border border-light p-5" action="#!">
+    
+      <p class="h4 mb-4">Coandidate Form</p>
+    
+      <!-- Email -->
+      <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Candidate Name">
+    
+      <!-- Password -->
+      <input type="number"  class="form-control mb-4" placeholder="Year of Experience">
+      <p class = "float-left">Skills</p>
+      <br>
+      <div id = "radbtn">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineradio1" value="option1">
+            <label class="form-check-label" for="inlineradio1">Java</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineradio2" value="option2">
+            <label class="form-check-label" for="inlineradio2">Angular</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineradio3" value="option3">
+            <label class="form-check-label" for="inlineradio3">SQL</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineradio3" value="option3">
+            <label class="form-check-label" for="inlineradio3">Spring</label>
+          </div>
+      </div>
+      
+      <input type="text"  class="form-control mb-4" placeholder="CTC">
+      <input type="text"  class="form-control mb-4" placeholder="ECTC">
+      <input type="password"  class="form-control mb-4" placeholder="Location">
+      <button class="btn btn-info float-right" type="submit">Submit Detail</button> 
+      <!-- <div class="container"> -->
+        <!-- <a  class = 'btn btn-info mr-auto' role="button">Company Form</a> -->
+      <!-- </div> -->
+    </form>
+</div>

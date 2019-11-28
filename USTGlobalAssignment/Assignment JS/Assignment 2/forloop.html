@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ForLoop</title>
+</head>
+<body>
+    
+    <script>
+        for(var i=0;i<5;i++)
+        {
+            console.log(i);
+        }
+        console.log("=====================================");
+        var arr=[23,4,5,67];
+        for(var i=0;i<arr.length;i++)
+        {
+            for(var j=0;j<arr.length;j++)
+            {
+                if(arr[i]<arr[j])
+                {
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for(var i = 0;i<arr.length;i++)
+        {
+            console.log(arr[i]);
+        }
+        console.log("=====================================");
+        for (let index = 0; index < 5; index++) {
+            // const element = array[index];
+            console.log(Math.pow(2,index));
+        }
+        console.log("=====================================");
+        var s = "Rotor",s1='',s2='';
+        for(var i = 0;i<s.length;i++)
+        {
+            var ch = s.charAt(i);
+            var ch1 = s.charAt(s.length  - i);
+            s1 = s1 + ch;
+            s2 = s2 + ch1;
+        }
+        console.log(s1 + ' '+s2);
+        console.log("=====================================");
+        var str = ['hello','world','this','is','me'];
+        for (var index = 0; index < str.length; index++) {
+            // const element = array[index];
+            console.log(str[index]);
+        }
+        console.log("=====================================");
+        var sum=0;
+        for (var index = 1; index <= 10; index++) {
+            sum = sum + i;
+        }
+        var avg = sum/10;
+        console.log(avg);
+        console.log("=====================================");
+        for(var i=65;i<70;i++){
+            console.log(String.fromCharCode(i));
+        }
+        console.log("=====================================");
+        for (var index = 97; index < 105; index++) {
+            // const element = array[index];
+            console.log(String.fromCharCode(index));
+        }
+        console.log("=====================================");
+        var arr = [1,2,3,4,5,6,7,7,8,9]
+        for(var i = 0;i<10;i++){
+            if(arr[i]%2==0)
+                console.log(arr[i]);
+        }
+        console.log("=====================================");
+        var s = 'jvsviahvvheusvsvsonvvun';
+        for (var index = 0; index < s.length; index++) {
+            // const element = array[index];
+            var ch = s.charAt(index);
+            if(ch==='a' ||ch==='e'||ch==='i'||ch==='o'||ch==='u')
+            {
+                console.log(ch);
+            }
+        }
+    </script>
+</body>
+</html>

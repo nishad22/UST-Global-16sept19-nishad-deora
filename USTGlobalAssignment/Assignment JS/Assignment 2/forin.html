@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>forin loop</title>
+</head>
+<body>
+    
+    <script>
+        var txt = ' ';
+        var student = {
+            name : 'Nishad',
+            id : 'CT15101',
+            age : 21,
+        }
+        for(var i  in student){
+            txt += student[i] + ' ';
+        }
+        console.log(txt);
+        console.log("=====================================");
+        var txt = ' ';
+        var comp = new Object();
+        comp.name = 'Dell';
+        comp.model = 'Dell Inspiron';
+        comp.price = 55000;
+        for(var i in comp){
+            txt += comp[i] + ' ';
+        }
+        console.log(txt);
+        console.log("=====================================");
+        var product = new Object();
+        product.name = 'samsung'
+        product.color = 'blue'
+
+        var laptop = new Object();
+        laptop.name = 'Dell'
+        laptop.color = 'black'
+        
+        var plant = new Object();
+        plant.name = 'Banayan'
+        plant.id = 2
+        
+        var pen = new Object();
+        pen.name = 'cello'
+        pen.color = 'blue'
+        pen.price = 20
+        
+        var obj = [product,laptop,plant,pen];
+        for(var i in obj){
+            console.log(obj[i]);
+        }
+        console.log("=====================================");
+        var str = 'Nishad';
+        for(var i in str){
+            console.log(str[i]);
+        }
+        console.log("=====================================");
+        var str = 'Nishad',s = '';
+        for(var i in str){
+            var ch = str.charAt(i);
+            s = s+ ' '+ch
+        }
+        console.log(s);
+        console.log("=====================================");
+        var arr=[1,2,3,4,5],sum=0;
+        for(var i in arr){
+            sum = sum +arr[i]+i;
+            // console.log(i);
+        }
+        console.log(sum);
+        console.log("=====================================");
+        let a = [65,66,67,68,69];
+        for(let i of arr){
+            console.log(String.fromCharCode(a[i]));
+        }
+        console.log("=====================================");
+        var ac = [1,2,3,,4,5,6]
+            for(var i in ac){
+                console.log('value:'+ac[i]);
+            }
+            console.log("=====================================");
+            var ac =  new Object();
+            ac.name = 'Nishad';
+            ac.age = 21;
+            let b = [ac]
+            for(var i in b){
+                console.log(b[i]);
+            }
+            console.log("=====================================");
+            var ac  = [1,2,3,4];
+            var sum = 0;
+            for(var i in ac){
+                sum = sum + ac[i];
+            }
+            console.log(sum);
+    </script>
+</body>
+</html>

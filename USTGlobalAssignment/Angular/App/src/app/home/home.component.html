@@ -1,0 +1,13 @@
+<h1 [ngStyle] = "{color : color, backgroundColor : colorName}">Home Component</h1>
+
+<!-- <h1 [ngClass] = "{'bg-info' : isActive , 'bg-success' : !isActive}">Angular</h1> -->
+
+<a routerLink="/reactiveform" class = "btn btn-outline-primary mt-4">Reactive Form</a>
+
+<a routerLink="/comment-details" class = "btn btn-outline-primary mt-4">Output</a>
+
+<div class="container col-md-5 offset-3 card card-bady" *ngFor = "let new of news">
+
+<img src="{{new.urlToImage}}" alt="" srcset="">
+<h1>{{new.title}}</h1>
+</div>

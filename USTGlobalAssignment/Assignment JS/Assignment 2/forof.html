@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>forof</title>
+    </head>
+    <body>
+        
+        <script>
+            var ac = [1,2,3,,4,5,6]
+            for(var i of ac){
+                console.log('value:'+i);
+            }
+            console.log("=====================================");
+            var ac =  new Object();
+            ac.name = 'Nishad';
+            ac.age = 21;
+            let b = [ac]
+            for(var i of b){
+                console.log(i);
+            }
+            console.log("=====================================");
+            var ac  = [1,2,3,4];
+            var sum = 0;
+            for(var i of ac){
+                sum = sum + i;
+            }
+            console.log(sum);
+            console.log("=====================================");
+           var car = {
+               name : 'bmw',
+               price : 2500000,
+           }
+           var s = ['raj','raja','karim'];
+           for(var i of s){
+               console.log('For of loop',i);
+           }
+           console.log("=====================================");
+           var product = new Object();
+            product.name = 'samsung'
+            product.color = 'blue'
+
+            var laptop = new Object();
+            laptop.name = 'Dell'
+            laptop.color = 'black'
+            
+            var plant = new Object();
+            plant.name = 'Banayan'
+            plant.id = 2
+            
+            var pen = new Object();
+            pen.name = 'cello'
+            pen.color = 'blue'
+            pen.price = 20
+
+            let arr = [product,laptop,plant,pen];
+            for(let i of arr)
+            {
+                console.log(i);
+            }
+            console.log("=====================================");
+        var s = [1,2,3,4,5,6],pro = 1;
+        for(let i of s){
+            pro = pro * i;
+        }
+        console.log(pro);
+        console.log("=====================================");
+        var ar = [2,3,4,5,6];
+        for (let i of ar) {
+            console.log(i);
+        }
+        console.log("=====================================");
+        let chair = {
+            name : 'cello',
+            price : 400,
+            leg : 'four',
+            material : 'plastic',
+        }
+        // let b = [chair];
+        // for(let i of b) {
+        //     console.log(i);
+        // }
+        console.log("=====================================");
+        let v;
+        let c = [1,'raj',true,null,v];
+        for(let i of c) {
+            console.log(typeof i);
+        }
+        console.log("=====================================");
+        var ar = [2,3,4,5,6];
+        for(let i of ar) {
+         if(i%2!==0)
+            console.log(i)
+        }
+        
+        </script>
+    </body>
+    </html>
+</body>
+</html>

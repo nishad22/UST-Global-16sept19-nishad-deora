@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>forEach</title>
+</head>
+<body>
+    
+    <script>
+        var movies = ['sholay','raj','dhoom'];
+        movies.forEach(function(value,index){
+            console.log('Movies:',value);
+        })
+        console.log('============================')
+        var movie = {
+            name : 'bahuali',
+            hero : 'Prabhas',
+            villan : 'Rana' , 
+            tag : 'highest grosser'
+        }
+        var arr = [1,2,3,movie];
+        arr.forEach(function (value,index) {
+            console.log(value);
+        })
+        console.log("=====================================");
+        var  arr = [1,2,3,4,5];
+        arr.forEach(function(value,index) {
+            console.log(Math.pow(arr[index],2));
+        })
+        console.log("=====================================");
+        var product = new Object();
+        product.name = 'samsung'
+        product.color = 'blue'
+
+        var laptop = new Object();
+        laptop.name = 'Dell'
+        laptop.color = 'black'
+        
+        var plant = new Object();
+        plant.name = 'Banayan'
+        plant.id = 2
+        
+        var pen = new Object();
+        pen.name = 'cello'
+        pen.color = 'blue'
+        pen.price = 20
+        
+        var obj = [product,laptop,plant,pen];
+        obj.forEach(function(v,i){
+            console.log(v);
+        })
+        console.log("=====================================");
+        var s = [1,2,3,4,5,6],sum=0;
+        s.forEach(function(v,i){
+            // let ch = s.charAt(i);
+            // if(ch==='a' ||ch==='e'||ch==='i'||ch==='o'||ch==='u')
+                sum = sum + v;
+        })
+        console.log(sum);
+        console.log("=====================================");
+        var s = [1,2,3,4,5,6],pro = 1;
+        s.forEach(function (v,i) {
+            pro = pro * v;
+        })
+        console.log(pro);
+        console.log("=====================================");
+        var ar = [2,3,4,5,6];
+        ar.forEach(function(v,i) {
+            console.log(v);
+        })
+        console.log("=====================================");
+        let chair = {
+            name : 'cello',
+            price : 400,
+            leg : 'four',
+            material : 'plastic',
+        }
+        let b = [chair];
+        b.forEach(function(v,i) {
+            console.log(v);
+        })
+        console.log("=====================================");
+        let v;
+        let c = [1,'raj',true,null,v];
+        c.forEach(function(v,i) {
+            console.log(typeof v);
+        })
+        console.log("=====================================");
+        var ar = [2,3,4,5,6];
+        ar.forEach(function(v,i) {
+         if(i%2!==0)
+            console.log(v)
+        })
+    </script>
+</body>
+</html>

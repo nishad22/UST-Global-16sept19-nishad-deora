@@ -1,0 +1,7 @@
+<div class="col-md-4 float-left card card-body">
+    <div class = "card card body" *ngFor = "let mob of Mobile">
+        <img src="{{mob.imgUrl}}" alt="" (click) = "sendMob(mob)">
+        <h1>{{mob.name}}</h1>
+    </div>
+</div>
+<app-promob [mob] = "selectedMob"></app-promob>

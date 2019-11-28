@@ -1,0 +1,51 @@
+<h1 custDir>About Component</h1>
+
+<h1>{{name}}</h1>
+<h1>{{name.length}}</h1>
+<h1 >
+    
+</h1>
+
+<div *ngFor  = "let person of Person" [ngStyle] = "pStyle " >
+  <h1>{{person.name}}</h1>
+  <h1>{{person.age}}</h1>  
+</div>
+<!-- event binding  -->
+<button class = 'btn btn-outline-danger bg-dark' (click) = "onClick()">Click me</button>
+<br>
+{{str}}
+<br>
+<!-- <button class = 'btn btn-outline-danger bg-dark' (click) = "str  = 'welcome Nishad'" >Click me</button> -->
+<!-- event binding  -->
+<!-- reference variable -->
+<br>
+<input type="text" #myInput>
+<button class = 'btn btn-outline-danger bg-dark pb-1 mb-1' (click) = "logMessage(myInput)">Go</button>
+<br>{{msg}}
+
+<br>
+<br><form  action="" class="col-md-4 offset-4 card card-body mt-5 mb-5" #form="ngForm" (ngSubmit) = "registerData(form)">
+    <h1 class="text-center bg-dark text-white">Register</h1>
+    <div class="form-group ">
+        <input type="email"  name='email' id='email' class = 'form-control' placeholder="Enter Mail" #email = 'ngModel' ngModel required minlength="5">
+        <div *ngIf = "email.touched && email.invalid">
+            <p *ngIf = 'email.errors.required' class = "alert alert-danger">* this field is required</p>
+            <p *ngIf = 'email.errors.minlength' class = 'text-danger'>* email is too short</p>
+        </div>
+    </div>
+    <div class="form-group ">
+        <input type="password"  name='password' id='password' class = "form-control" placeholder="Enter password" #password = 'ngModel' ngModel required minlength="5">
+        <div *ngIf = 'password.touched && password.invalid'>
+            <p *ngIf = 'password.errors.required' class = "alert alert-danger">* this field is required</p>
+            <p *ngIf = 'password.errors.minlength' class = 'text-danger'>* email is too short</p>
+        </div>
+    </div>
+        
+    <div class = "form-group">
+        <button type = 'submit' class = 'btn btn-outline-success float-right' [disabled] = 'form.invalid'>Register</button>
+    </div>
+    
+</form>
+<!-- end fo reference variable -->
+<input type="text" [(ngModel)] = "hobby">
+<h4>{{hobby}}</h4>
