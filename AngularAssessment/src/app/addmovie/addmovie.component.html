@@ -1,0 +1,28 @@
+<div class="col-md-4 offset-3 mt-5 card card-body">
+    <h2 class="text-center bg-danger text-dark">Add Movies</h2>
+    <form action="" [formGroup]="form" (ngSubmit)="addMovie(form)">
+        <div class="form-group">
+            <input type="text" name="title" id="title" class="form-control" ngModel formControlName="title" placeholder="Movie title" required>
+        <div *ngIf="title.touched && title.invalid">
+            <p *ngIf="title.errors.required" class="text-danger">This field required</p>
+        </div>
+        </div>
+        <div class="form-group">
+            <input type="text" name="url" id="url" class="form-control" pattern="https?://[a-z]*[.]+[a-z]+" ngModel formControlName="url" placeholder="Movie URL" required>
+            <div *ngIf="url.touched && url.invalid">
+                    <p *ngIf="url.errors.required" class="text-danger">This field required</p>
+                    <p *ngIf="url.errors.pattern" class="text-danger">Enter COrrectly</p>
+                </div>
+        </div>
+        <div class="form-group">
+            <textarea name="desc" id="desc" class="form-control" minlength="20" ngModel formControlName="desc" cols="30" rows="5" placeholder="Movie Description" required></textarea>
+            <div *ngIf="desc.touched && desc.invalid">
+                    <p *ngIf="desc.errors.required" class="text-danger">This field required</p>
+                <p *ngIf="desc.errors.minlength" class="text-danger">Enter Minimum 20 character</p>
+                </div>
+        </div>
+        <div class="form-group">
+           <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add movie</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div class = "container col-md-4 offset-4 card card-body ">
+    <form  action="" class="text-center border border-light p-5" #form="ngForm" (ngSubmit) = "logineData(form)">
+      <h1 class="text-center bg-dark text-white">User Login</h1>
+      
+      <div class="form-group ">
+          <input type="email"  name='mail' id='mail' class = 'form-control' placeholder="Enter mail" #email = 'ngModel' ngModel required>
+          <div *ngIf = 'email.touched && email.invalid'>  
+            <p *ngIf = 'email.errors.required' class = "alert alert-danger">* this field is required</p>
+              <!-- <p *ngIf = 'email.errors.minlength' class = 'text-danger'>* email is too short</p> -->
+          </div>
+      </div>
+      
+      <div class="form-group ">
+        <input type="password"  name='pass' id='pass' class = "form-control" placeholder="Enter passsowrd" #pass = 'ngModel' ngModel required>
+        <div *ngIf = 'pass.touched && pass.invalid'>
+            <p *ngIf = 'pass.errors.required' class = "alert alert-danger">* this field is required</p>
+            <!-- <p *ngIf = 'password.errors.minlength' class = 'text-danger'>* email is too short</p> -->
+        </div>
+      </div>
+  
+     
+  
+      <div class = "form-group">
+          <button type = 'submit' class = 'btn btn-outline-success float-right' [disabled] = 'form.invalid'>submit</button>
+      </div>
+      
+  </form>
+  </div>
