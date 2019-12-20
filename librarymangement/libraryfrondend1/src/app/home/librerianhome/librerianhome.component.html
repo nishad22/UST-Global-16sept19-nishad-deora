@@ -1,0 +1,92 @@
+<h1>Welcome {{name}}</h1>
+<div class="container col-md-4 card-body offset-5 mt-auto">
+    <form #form="ngForm" (ngSubmit)="booksearch(form)" class="form-inline my-2 my-lg-0">
+        <input type="number" name="bid" placeholder="Search Book" class="form-control" #search="ngModel" ngModel>&nbsp;
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div *ngIf="bookDetail" class="container col-md-12 ">
+    <br>
+    <table class="table-bordered table-stripped offest-5 col-md-12 mt-auto p-5 ">
+        <thead class="table-dark p-5 text-center">
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Book Author</th>
+                <th>Publication</th>
+                <th>Book Update</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                <td>{{bookDetail.bid}}</td>
+                <td>{{bookDetail.bname}}</td>
+                <td>{{bookDetail.bauthor}}</td>
+                <td>{{bookDetail.publication}}</td>
+                
+                <td>
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Update
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Update Book Info</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="border border-light p-5" #data="ngForm"
+                                        (ngSubmit)="updateBook(data)">
+                                        
+                                        <div class="form-group">
+                                                <input type="text" name="bname" placeholder="Enter Book Name"
+                                                    class="form-control" #bname='ngModel' ngModel >
+                                                <!-- <div *ngIf='bname.touched && bname.invalid'>
+                                                    <p *ngIf='bname.errors.required' class='text-danger'>*enter rollno</p>
+                                                </div> -->
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" name="bauthor" placeholder="Enter Book author"
+                                                class="form-control" #bauthor='ngModel' ngModel >
+                                            <!-- <div *ngIf='bname.touched && bname.invalid'>
+                                                <p *ngIf='bname.errors.required' class='text-danger'>*enter rollno</p>
+                                            </div> -->
+                                        </div>
+                                        
+                                        <div>
+                                            <input type="text" name="publication" placeholder="Enter Book publication"
+                                                class="form-control" #publication='ngModel' ngModel >
+                                            <!-- <div *ngIf='bauthor.touched && bauthor.invalid'>
+                                                <p *ngIf='bauthor.errors.required' class='text-danger'>
+                                                    *enter password
+                                                </p>
+                                            </div> -->
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" [disabled]="data.invalid">Save
+                                                changes</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </td> <!-- end of update -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+

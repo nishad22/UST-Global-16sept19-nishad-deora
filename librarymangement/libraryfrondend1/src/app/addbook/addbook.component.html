@@ -1,0 +1,31 @@
+<div class="conatiner col-md-4 card offset-4 mt-5">
+  <form class="border border-light p-5" #data="ngForm" (ngSubmit)="addBook(data)">
+      <h1 class="text-center text-dark ">Add New Book</h1>
+    <br>
+    <div class="form-group">
+      <input type="text" name="bname" placeholder="Enter Book Name" class="form-control p-4" #bname='ngModel' ngModel>
+      <!-- <div *ngIf='bname.touched && bname.invalid'>
+            <p *ngIf='bname.errors.required' class='text-danger'>*enter rollno</p>
+        </div> -->
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="bauthor" placeholder="Enter Book author" class="form-control p-4" #bauthor='ngModel' ngModel>
+      <!-- <div *ngIf='bname.touched && bname.invalid'>
+        <p *ngIf='bname.errors.required' class='text-danger'>*enter rollno</p>
+    </div> -->
+    </div>
+
+    <div>
+      <input type="text" name="publication" placeholder="Enter Book publication" class="form-control p-4" #publication='ngModel' ngModel>
+      <!-- <div *ngIf='bauthor.touched && bauthor.invalid'>
+        <p *ngIf='bauthor.errors.required' class='text-danger'>
+            *enter password
+        </p>
+    </div> -->
+    <br>
+    </div>
+      <button type="submit" class="btn btn-primary p-2" [disabled]="data.invalid">Save changes</button>
+      <button class="btn btn-primary p-2 float-right" (click) = 'goToHOme()'>Go to Home</button>
+  </form>
+</div>

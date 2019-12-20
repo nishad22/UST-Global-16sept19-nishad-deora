@@ -1,0 +1,80 @@
+<div class="container col-md-4 card-body">
+    <form class=" border border-light p-5" [formGroup]="form" (ngSubmit)="registerUser(form)">
+        <h1 class="text-center text-dark ">Student Registration</h1>
+
+        <div class="form-group">
+            <label>Student Rollno.</label>
+            <input type="text" class="form-control" id="rollno" name="rollno" placeholder="Enter Roll no."
+                formControlName='rollno'>
+            <div *ngIf=" rollno.touched && rollno.invalid">
+                <p *ngIf='rollno.errors.required' class="text-danger">*enter Name</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>User Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
+                formControlName='name'>
+            <div *ngIf=" name.touched && name.invalid">
+                <p *ngIf='name.errors.required' class="text-danger">*enter Name</p>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label>User age</label>
+            <input type="number" class="form-control" id = "age" name = "age" placeholder="Age"  formControlName = 'age'>
+            <div *ngIf="age.touched && age.invalid"> 
+                <p *ngIf = "age.errors.required" class="text-danger">*age required</p>
+                <p *ngIf = "age.errors.min" class="text-danger">*age below 18</p>
+                <p *ngIf = "age.errors.max" class="text-danger">*age above 50</p>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label>Gender</label>
+            <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="male" formControlName='gender'>
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="female" formControlName='gender'>
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="others" formControlName='gender'>
+                <label class="form-check-label" for="inlineRadio3">Other</label>
+            </div>
+            <!-- <div *ngIf="gender.touched && gender.invalid">
+                        <p *ngIf = 'gender.errors.required' class="text-danger">*select gender</p>
+                    </div> -->
+        </div>
+
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text" class="form-control" id="department" name="department" placeholder="Enter department"
+                formControlName='department'>
+            <div *ngIf='department.touched && department.invalid'>
+                <p *ngIf='department.errors.required' class="text-danger">*enter department</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                formControlName='password'>
+            <div *ngIf='password.touched && password.invalid'>
+                <p *ngIf='password.errors.required' class="text-danger">*this field is required</p>
+                <p *ngIf='password.errors.minlength' class = "text-danger">*password too short</p>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label>Retype Password</label>
+            <input type="password" class="form-control" id="retype" name = "retype" placeholder="Password" formControlName = 'retype'>
+        </div> -->
+
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+
+    </form>
+</div>

@@ -1,0 +1,33 @@
+<div class="container col-md-12">
+    <table class="table-bordered table-stripped offest-5 col-md-12 mt-auto p-5 text-center table-dark">
+        <thead  class=" p-5">
+            <tr>
+                <th>ID</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+                <th>Roll Number</th>
+                <th>Book Name</th>
+                <th>Status</th>
+                <th  *ngIf='request'>Accept</th>
+                <th *ngIf='request'>Reject</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let book of bookissue">
+                <td>{{book.id}}</td>
+                <td>{{book.issueDate | date}} </td>
+                <td>{{book.returnDate | date}} </td>
+                <td>{{book.student.rollno}}</td>
+                <td>{{book.book.bname}}</td>
+                <td>{{book.status}}</td>
+                <td>
+                    <button  class="btn btn-outline-success" (click) = 'accept(book.id)' *ngIf="!book.acceptedStatus">Accept</button>
+                    <p *ngIf='book.acceptedStatus'>Accepted</p>
+                </td>
+                <td>
+                    <button class="btn btn-outline-danger" (click) = 'reject(book.id)' *ngIf='request'>Reject</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

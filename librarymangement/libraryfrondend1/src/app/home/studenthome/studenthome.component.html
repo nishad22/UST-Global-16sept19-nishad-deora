@@ -1,0 +1,35 @@
+<h1>Welcome {{name}}</h1>
+<div class="container col-md-4 card-body offset-5 mt-auto">
+    <form #form = "ngForm" (ngSubmit) = "booksearch(form)" class="form-inline my-2 my-lg-0">
+        <input type="number" name="bid" placeholder="Search Book" class = "form-control" #search = "ngModel" ngModel>&nbsp;
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div *ngIf = "bookDetails" class = "container">
+    <!-- <div *ngFor = "let book of bookDetails"> -->
+        <br>
+        <table  class="table-bordered table-stripped offest-5 col-md-12 mt-auto p-5 text-center">
+            <thead  class="table-dark p-5">
+                <tr>
+                    <th>ID</th>
+                    <th>Book Name</th>
+                    <th>Book Author</th>
+                    <th>Publication</th>
+                    <th>Book Request</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{bookDetails.bid}}</td>
+                    <td>{{bookDetails.bname}}</td>
+                    <td>{{bookDetails.bauthor}}</td>
+                    <td>{{bookDetails.publication}}</td>
+                    <td>
+                        <button class="btn btn-outline-success my-2 my-sm-0" (click) = 'makeRequest()'>Request</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <!-- </div> -->
+</div>
