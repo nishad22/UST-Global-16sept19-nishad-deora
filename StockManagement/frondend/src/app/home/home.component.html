@@ -1,0 +1,34 @@
+<!-- <h1>Welcome {{name}}</h1> -->
+<div class="container col-md-4 card-body offset-5 mt-auto">
+    <form #form="ngForm" (ngSubmit)="productsearch(form)" class="form-inline my-2 my-lg-0">
+        <input type="text" name="name" placeholder="Search Product by name" class="form-control" #search="ngModel" ngModel>&nbsp;
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div *ngIf="product" class="container col-md-12 ">
+    <br>
+    <table class="table-bordered table-stripped offest-5 col-md-12 mt-auto p-5 ">
+        <thead class="table-dark p-5 text-center">
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Product Category</th>
+                <th>Product Company</th>
+                <th>Product Quantity</th>
+                <th>Product price</th>
+                
+            </tr>
+        </thead>
+        <tbody class="text-center" >
+            <tr *ngFor = "let p of product">
+                <td>{{p.product_id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.category}}</td>
+                <td>{{p.company}}</td>
+                <td>{{p.quantity}}</td>
+                <td>{{p.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,48 @@
+<div class="container col-md-4 card-body">
+    <form class=" border border-light p-5" [formGroup] = "form" (ngSubmit) = "addproduct(form)" >
+        <h1 class="text-center text-dark ">Add Product</h1>
+        
+
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" id="name"  name = "name" placeholder="Product Name"  formControlName = 'name'>
+            <div *ngIf=" name.touched && name.invalid">
+                <p *ngIf = 'name.errors.required' class="text-danger">*enter Name</p>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Product Category</label>
+            <input type="text" class="form-control" id="category"  name = "category" placeholder="Product Category"  formControlName = 'category'>
+            <div *ngIf=" category.touched && category.invalid">
+                <p *ngIf = 'category.errors.required' class="text-danger">*enter category</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Product Company</label>
+            <input type="text" class="form-control" id="company"  name = "company" placeholder="Product company"  formControlName = 'company'>
+            <div *ngIf=" company.touched && company.invalid">
+                <p *ngIf = 'company.errors.required' class="text-danger">*enter category</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Product Quantity</label>
+            <input type="number" class="form-control" id="quantity"  name = "quantity" placeholder="Enter quantity"  formControlName = 'quantity'>
+            <div *ngIf=" quantity.touched && quantity.invalid">
+                <p *ngIf = 'quantity.errors.required' class="text-danger">*enter quantity</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Product Price</label>
+            <input type="number" class="form-control" id="price"  name = "price" placeholder="Enter price"  formControlName = 'price'>
+            <div *ngIf=" price.touched && price.invalid">
+                <p *ngIf = 'price.errors.required' class="text-danger">*enter price</p>
+            </div>
+        </div>
+            
+        <button type="submit" class="btn btn-primary" [disabled] = "form.invalid">Submit</button>
+    </form>
+</div>
